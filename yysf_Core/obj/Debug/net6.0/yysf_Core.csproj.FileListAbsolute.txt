@@ -1,0 +1,12 @@
+E:\wx_b_api\yysf_Core\bin\Debug\net6.0\yysf_Core.deps.json
+E:\wx_b_api\yysf_Core\bin\Debug\net6.0\yysf_Core.dll
+E:\wx_b_api\yysf_Core\bin\Debug\net6.0\yysf_Core.pdb
+E:\wx_b_api\yysf_Core\obj\Debug\net6.0\yysf_Core.csproj.AssemblyReference.cache
+E:\wx_b_api\yysf_Core\obj\Debug\net6.0\yysf_Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\wx_b_api\yysf_Core\obj\Debug\net6.0\yysf_Core.AssemblyInfoInputs.cache
+E:\wx_b_api\yysf_Core\obj\Debug\net6.0\yysf_Core.AssemblyInfo.cs
+E:\wx_b_api\yysf_Core\obj\Debug\net6.0\yysf_Core.csproj.CoreCompileInputs.cache
+E:\wx_b_api\yysf_Core\obj\Debug\net6.0\yysf_Core.dll
+E:\wx_b_api\yysf_Core\obj\Debug\net6.0\refint\yysf_Core.dll
+E:\wx_b_api\yysf_Core\obj\Debug\net6.0\yysf_Core.pdb
+E:\wx_b_api\yysf_Core\obj\Debug\net6.0\ref\yysf_Core.dll
