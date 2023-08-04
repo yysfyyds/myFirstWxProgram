@@ -1,0 +1,127 @@
+<view class="view-container">
+    <view class="view-swiper">
+        <swiper autoplay circular class="swiper" duration="{{1000}}" indicatorActiveColor="#55E6C1" indicatorDots="{{true}}" interval="{{3000}}">
+            <swiper-item class="swiper-item" wx:for="{{imgUrls}}" wx:key="index">
+                <image lazyLoad webp bindtap="clickBanner" class="slide-image" data-tourl="{{item.toUrl}}" mode="widthFix" src="{{item.imageUrl}}"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <official-account></official-account>
+    <view class="view-menu-type">
+        <view bindtap="clickNavMettle" class="type-item">
+            <view>
+                <image lazyLoad webp class="menu-image" mode="widthFix" src="../../images/p_0.png"></image>
+            </view>
+            <view>壁纸</view>
+        </view>
+        <view bindtap="clickCopyWriter" class="type-item">
+            <view>
+                <image lazyLoad webp class="menu-image" mode="widthFix" src="../../images/p_1.png"></image>
+            </view>
+            <view>文案</view>
+        </view>
+        <view bindtap="clickEmoji" class="type-item">
+            <view>
+                <image lazyLoad webp class="menu-image" mode="widthFix" src="../../images/p_2.png"></image>
+            </view>
+            <view>表情包</view>
+        </view>
+        <view bindtap="clickAvatar" class="type-item">
+            <view>
+                <image lazyLoad webp class="menu-image" mode="widthFix" src="../../images/p_3.png"></image>
+            </view>
+            <view>头像</view>
+        </view>
+        <view bindtap="clickNote" class="type-item">
+            <view>
+                <image lazyLoad webp class="menu-image" mode="widthFix" src="../../images/p_4.png"></image>
+            </view>
+            <view>社区</view>
+        </view>
+        <view bindtap="clickArticle" class="type-item">
+            <view>
+                <image lazyLoad webp class="menu-image" mode="widthFix" src="../../images/p_5.png"></image>
+            </view>
+            <view>文章</view>
+        </view>
+        <view bindtap="clickShop" class="type-item">
+            <view>
+                <image lazyLoad webp class="menu-image" mode="widthFix" src="../../images/p_6.png"></image>
+            </view>
+            <view>购物</view>
+        </view>
+        <view bindtap="onMusic" class="type-item">
+            <view>
+                <image lazyLoad webp class="menu-image" mode="widthFix" src="../../images/P_7.png"></image>
+            </view>
+            <view>音乐</view>
+        </view>
+    </view>
+    <!--推荐文案-->
+<view class="container_copywrite">
+  <recommend-copywrite></recommend-copywrite>
+  <!--文案-->
+  <view class="view_copywrite">
+    <view class="copywrite_item">
+      <view class="copywrite_head"><image src="https://cdn.pixabay.com/photo/2023/07/28/10/08/ai-generated-8154949_640.png" mode="widthFix" class="copywrite_headimage"/></view>
+      <view class="copywrite_content" >我是傻逼van兔思瑞</view>
+    </view>
+  </view>
+  <view class="view_copywrite">
+    <view class="copywrite_item">
+      <view class="copywrite_head"><image src="https://cdn.pixabay.com/photo/2023/07/28/10/08/ai-generated-8154949_640.png" mode="widthFix" class="copywrite_headimage"/></view>
+      <view class="copywrite_content" >离谱给离谱开门</view>
+    </view>
+  </view>
+</view>
+    <!--壁纸-->
+    <view class="recommend-picture">
+        <recommend-picture boxShadowColor="lightgray" images="{{newestMettles}}" loading="{{newestLoading}}" loadingText="小鱼玩命加载美图中..." more="/pages/mettle/index" title="热门壁纸" titleBoxColor="#7ba0f8" titleColor="#7ba0f8"></recommend-picture>
+    </view>
+    <!--文章-->
+    <view class="view-article">
+        <recommend-item more="/pages/article/index" title="热门文章" titleBoxColor="#7ba0f8" titleColor="#7ba0f8"></recommend-item>
+        <view class="classify-segment" >
+          <l-segment bind:linchange="changeTabs" active-color="#7a9ff8" has-line="{{false}}">
+        <l-segment-item tab="{{item.name}}"  wx:for="{{classifyList}}">
+        
+        </l-segment-item>
+        
+    </l-segment>  
+        </view>
+        <view class="view-content">
+            <block wx:for="{{articles}}" wx:key="index">
+                <view class="content-item">
+                    <view bindtap="clickArticleDetail" class="article-item-left" data-id="{{item.id}}" wx:if="{{item.outerImage}}">
+                        <image lazyLoad webp mode="widthFix" src="{{cosUrl+item.outerImage}}"></image>
+                    </view>
+                    <view bindtap="clickArticleDetail" class="article-item-right" data-id="{{item.id}}">
+                        <view class="item-title">{{util.substring(item.title,0,48)}}...</view>
+                        <view class="item-content"></view>
+                        <view class="item-footer">
+                            <view>
+                                <van-icon name="eye-o"></van-icon> {{item.browseCount}} </view>
+                            <view>
+                                <van-icon name="like-o"></van-icon> {{item.supportCount}} </view>
+                            <view>
+                                <van-icon name="star-o"></van-icon> {{item.collectCount}} </view>
+                            <view>
+                                <van-icon name="share-o"></van-icon> {{item.shareCount}} </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="content-item content-item-gg" wx:if="{{index%7==2}}">
+                    <ad-custom unitId="adunit-c422cffc27ebd9ab"></ad-custom>
+                </view>
+            </block>
+        </view>
+        <view class="view-loading" wx:if="{{loading}}">
+            <van-loading size="22rpx">玩命加载文章中...</van-loading>
+        </view>
+    </view>
+    <view class="view-notdata-msg" wx:if="{{!hasData}}"> 我也是有底线的哦~ </view>
+</view>
+<return-topbutton show="{{showGoTop}}"></return-topbutton>
+<share-msg></share-msg>
+<add-tips logo="https://miniapp.xywl123.cn/develop/images/logo.png" name="小鱼记"></add-tips>
+<wxs module="util" src="" />

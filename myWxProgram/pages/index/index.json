@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "recommend-item":"/components/recommend-item/index",
+    "recommend-picture":"/components/recommend-picture/index",
+    "recommend-copywrite":"/components/recommend-copywrite/index",
+    "l-segment":"/miniprogram_npm/lin-ui/segment/index",
+    "l-segment-item":"/miniprogram_npm/lin-ui/segment-item/index"
+  },
+  "navigationBarTitleText": "夜雨声烦的小程序"
+}
