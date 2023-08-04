@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\yysf_wx_api.props" />
+</Project>
